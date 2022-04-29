@@ -13,7 +13,7 @@ then
         if [[ "$checkcu" -gt "0" ]]; then
                 sed -i 's/cuh/hip.h/g' $name".hip.cpp"
         fi
-# if the file is cuda HEADER hipigy to hip.h
+# if the file is cuda HEADER hipify to hip.h
 elif  [[ "$extension" == "cuh" ]]; then
         hipify-perl $1 > ${name}".hip.h"
 #if the file is cpp and it does include to cuh, ocpy the file to hip.cpp and rename .cuh to hip.h
